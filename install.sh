@@ -13,7 +13,7 @@ if ! has zsh
 fi
 
 mkdir -pv "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+[ -d "$HOME/.zsh/pure" ] || git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 cp -rv "$DIR/zfuncs" "$HOME/.zsh"
 cp -rv "$DIR/.zshrc" $HOME
 cp -rv "$DIR/.zprofile" $HOME
