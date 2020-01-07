@@ -1,0 +1,11 @@
+if $(! $git status -s $1 &> /dev/null)
+    then
+        echo "no git repo"
+    else
+    if [[ $($git status --porcelain $1) == "" ]]
+    then
+        echo "no"
+    else
+        echo "yes"
+    fi
+fi

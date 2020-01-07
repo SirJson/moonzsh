@@ -1,0 +1,8 @@
+echo "Executing \"$2\" as User \"$1\"..."
+if installed "sudo"; then
+    exec sudo -u $1 /bin/bash -l -c $2 $@
+elif installed "su"; then
+    exec su -s /bin/bash $1 -l -c $2 $@
+fi
+panic "No su or sudo installed"
+exit 1

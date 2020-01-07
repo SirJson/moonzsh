@@ -1,0 +1,1 @@
+installed "sudo" || panic "Stopped execution! Your system is missing the sudo command"

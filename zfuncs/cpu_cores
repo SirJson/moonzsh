@@ -1,0 +1,2 @@
+local result=$(cat /proc/cpuinfo | awk '/^processor/{print $3}' | wc -l)
+return $result

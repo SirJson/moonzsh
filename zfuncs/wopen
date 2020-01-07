@@ -1,0 +1,8 @@
+emulate -L zsh
+if ! [[ -n "$1" ]] ; then
+    print "Usage: wopen \$URL/\$file">&2
+    return 1
+else
+    FILE=$1
+    curl $FILE | less -R
+fi

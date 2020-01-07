@@ -1,0 +1,11 @@
+if ! [ $(id -u) = 0 ]; then
+    local script_root=$(dirname $(readlink -f $0))
+        echo "Requesting root access to continue..."
+    if command -v "sudo" &> /dev/null; then
+        exec sudo -i $script_root/$0 $@
+    elif command -v "su" &> /dev/null; then
+        exec su -c $script_root/$0 $@
+    fi
+    echo "No \"sudo\" or \"su\" found! Please run this script as root or a root shell!"
+    exit 1
+fi

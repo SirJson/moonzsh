@@ -1,0 +1,7 @@
+emulate -L zsh
+if [[ -n "$1" ]]; then
+    printf "%d\n" $1
+else
+    print 'Usage: dec <number-to-convert>'
+    return 1
+fi

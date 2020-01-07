@@ -1,0 +1,5 @@
+local usage="\nUSAGE:\n\tbase64decode INPUT OUTFILE"
+test -n $1 && panic "No input$usage"
+test -n $2 && panic "No output file$usage"
+echo "Decoding base64 payload to $2..."
+echo "$1" | base64 -d > "$2"
