@@ -14,8 +14,8 @@ fi
 
 mkdir -pv "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-cp -rv "$DIR/zsh/zfuncs" "$HOME/.zsh"
+cp -rv "$DIR/zfuncs" "$HOME/.zsh"
 cp -rv "$DIR/.zshrc" $HOME
 cp -rv "$DIR/.zprofile" $HOME
-zsh -e "curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash"
+zsh -c "curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash"
 echo "Install done!"
