@@ -15,7 +15,10 @@ fi
 mkdir -pv "$HOME/.zsh"
 [ -d "$HOME/.zsh/pure" ] || git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 cp -rv "$DIR/zfuncs" "$HOME/.zsh"
+chmod +x "$HOME/.zsh/zfuncs/*"
 cp -rv "$DIR/.zshrc" $HOME
 cp -rv "$DIR/.zprofile" $HOME
-zsh -c "curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash"
+echo "Changing your login shell to zsh..."
+chsh -s $(which zsh) $USER
+zsh -c "export SHELL=$(which zsh) && curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash"
 echo "Install done!"
