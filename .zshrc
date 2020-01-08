@@ -19,6 +19,9 @@ export PATH
 
 source "$MYZDIR/alias.zsh"
 
+command -v pipenv &> /dev/null && eval $(pipenv --completion)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=0
+export PIPENV_VENV_IN_PROJECT=true
