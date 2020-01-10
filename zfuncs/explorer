@@ -1,0 +1,6 @@
+A=$PWD
+[[ -n $1 ]] && a="$1" || a="$PWD"
+cd $a
+local dir=$((printf '..\n' && exa -F1a --color=always) | fzf --reverse --exact --ansi --preview="test -f {} && bat --color=always --paging=never --decorations=always --italic-text=always --style=full {} || test -d {} && exa -Fla --color=always {} || echo ''")
+test -d "$dir" && explorer $dir
+test -f "$dir" && $EDITOR $dir
