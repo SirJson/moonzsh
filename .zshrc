@@ -29,3 +29,4 @@ source "$MYZDIR/aliases.zsh"
 installed pipenv && eval $(pipenv --completion)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fnm env --multi)"
+source "$MYZDIR/syntax-highlighting/zsh-syntax-highlighting.zsh"
