@@ -1,0 +1,1 @@
+node --eval "var fs = require('fs'); JSON.parse(fs.readFileSync('$1'));" &> /dev/null
