@@ -1,1 +1,6 @@
 node --eval "var fs = require('fs'); JSON.parse(fs.readFileSync('$1'));" &> /dev/null
+if [[ $? -ne 0 ]]; then
+    echo "[ERR] JSON file is not valid!"
+else
+    echo "[OK] JSON file is valid!"
+fi
