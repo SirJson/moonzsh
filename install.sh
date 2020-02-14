@@ -44,7 +44,7 @@ fi
 mkdir -pv "$HOME/.zsh"
 [ -d "$HOME/.zsh/syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/syntax-highlighting"
 
-setup_safe "$DIR/.zshrc" "$HOME/.zshrc"
+cat "$DIR/.zshrc" >> "$HOME/.zshrc"
 cp -rv "$DIR/zfuncs" "$HOME/.zsh"
 setup_skip "$DIR/aliases.zsh" "$HOME/.zsh/aliases.zsh"
 setup_skip "$DIR/.zprofile" "$HOME/.zprofile"
