@@ -3,7 +3,7 @@
 
 MYZDIR="$HOME/.zsh"
 
-fpath=("$MYZDIR/zfuncs" "$MYZDIR/pure" "${fpath[@]}")
+fpath=("$MYZDIR/zfuncs" "${fpath[@]}")
 
 # Load all user zfuncs
 if [[ -d $MYZDIR/zfuncs ]]; then
@@ -12,11 +12,6 @@ if [[ -d $MYZDIR/zfuncs ]]; then
         autoload -U $func
     done
 fi
-
-# Init pure
-autoload -U promptinit
-promptinit
-prompt pure
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
@@ -28,5 +23,4 @@ stty erase "^?"
 source "$MYZDIR/aliases.zsh"
 installed pipenv && eval $(pipenv --completion)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fnm env --multi)"
 source "$MYZDIR/syntax-highlighting/zsh-syntax-highlighting.zsh"
