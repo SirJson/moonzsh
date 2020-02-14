@@ -25,5 +25,9 @@ installed "fd" && alias find='fd'
 installed "bat" && alias cat='bat'
 installed "rg" && alias grep='grep'
 installed "nvim" && alias vim='nvim'
+installed "fzf-dpkg" && alias pkg="fzf=dpkg
+installed "http" && installed "jq" && installed "fzf" && installed "sd" && alias dail="http -b 'https://vios.dev/d?t=!info' | jq '.[]'| sd '\"' '' | fzf"
+installed "http" && installed "jq" && installed "fzf" && installed "sd" && alias ddail='http --download "https://vios.dev/d?t=$(dail)"'
 alias 'tailf'='tail -f'
 alias reload!="source ~/.zshrc"
+
