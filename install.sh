@@ -29,7 +29,7 @@ function setup_safe() {
 	local target=$2
 	if [ -f $target ]; then
 		printf "${ORANGE}$target already exists! Creating backup copy..${NC}\n"
-		cp -rv $2 "$2.bak_$UNIXTIME" 
+		cp -rv $2 "$2.bak_$UNIXTIME"
 	fi
 
 	printf "${GREEN}Installing $src to $target...${NC}\n"
@@ -48,7 +48,7 @@ mkdir -pv "$HOME/.zsh"
 setup_safe "$DIR/.zshrc" "$HOME/.zshrc"
 cp -rv "$DIR/zfuncs" "$HOME/.zsh"
 setup_skip "$DIR/aliases.zsh" "$HOME/.zsh/aliases.zsh"
-setup_skip "$DIR/.zprofile" "$HOME/.zprofile" 
+setup_skip "$DIR/.zprofile" "$HOME/.zprofile"
 setup_skip "$DIR/.zshenv" "$HOME/.zenv"
 
 
