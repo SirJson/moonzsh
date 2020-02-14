@@ -42,7 +42,6 @@ if ! has zsh; then
 fi
 
 mkdir -pv "$HOME/.zsh"
-[ -d "$HOME/.zsh/pure" ] || git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 [ -d "$HOME/.zsh/syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/syntax-highlighting"
 
 setup_safe "$DIR/.zshrc" "$HOME/.zshrc"
@@ -51,15 +50,10 @@ setup_skip "$DIR/aliases.zsh" "$HOME/.zsh/aliases.zsh"
 setup_skip "$DIR/.zprofile" "$HOME/.zprofile"
 setup_skip "$DIR/.zshenv" "$HOME/.zenv"
 
-
 USRSHELL=$(basename $SHELL)
 if [ ! "$USRSHELL" == "zsh" ]; then
 	echo "Changing your login shell to zsh..."
 	chsh -s $(which zsh) $USER
-fi
-
-if ! has fnm; then
-	zsh -c "export SHELL=$(which zsh) && curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash"
 fi
 
 chmod +x $HOME/.zsh/zfuncs/*
